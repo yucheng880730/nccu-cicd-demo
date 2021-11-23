@@ -1,0 +1,25 @@
+
+# Login to Heroku
+heroku login
+
+# Review Heroku config
+heroku config
+
+# Review PostgreSQL instance in Heroku for specified application
+heroku pg --app nccu-cicd-demo-1123
+
+# 
+heroku addons:create heroku-postgresql --app nccu-cicd-demo-gh
+
+heroku pg:psql --app nccu-cicd-demo-gh
+
+run init-script
+
+heroku addons:attach nccu-cicd-demo-gh-1123::DATABASE --app  nccu-cicd-de-posgresql-aedfn0n <new-app name>
+
+
+git checkout -b posgresql
+git push -u origin posgresql
+
+heroku pg:psql --app nccu-cicd-demo-gh-1123
+heroku pg:psql --app nccu-cicd-demo-gh-1123-prod
